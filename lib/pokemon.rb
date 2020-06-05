@@ -12,6 +12,7 @@ class Pokemon
 
   def self.new_from_db(row)
     new_pokemon = self.new(row[0], row[1], row[2])
+  end
 
   def self.save(name, type, db)
     sql = <<-SQL
