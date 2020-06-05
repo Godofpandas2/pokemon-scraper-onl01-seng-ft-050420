@@ -31,7 +31,7 @@ class Pokemon
       WHERE id = ?
     SQL
       db.execute(sql, id).map do |row|
-        self.new_from_db
+        self.new_from_db(row)
       end
   end
 end
