@@ -1,3 +1,4 @@
+require 'pry'
 class Pokemon
   attr_accessor :name, :type
   attr_reader :id, :db
@@ -21,7 +22,9 @@ class Pokemon
 
   def self.find(id, db)
     sql = <<-SQL
-      SELECT * FROM pokemon WHERE id = ?
+      SELECT * FROM pokemon
+      WHERE id = ?
     SQL
+    binding.pry
   end
 end
