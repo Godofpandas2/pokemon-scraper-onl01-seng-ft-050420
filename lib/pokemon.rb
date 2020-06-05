@@ -11,6 +11,7 @@ class Pokemon
   end
 
   def self.new_from_db(row)
+    binding.pry
     new_pokemon = self.new(row[0], row[1], row[2], row[3])
   end
 
