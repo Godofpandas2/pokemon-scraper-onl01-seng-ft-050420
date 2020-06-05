@@ -11,7 +11,6 @@ class Pokemon
   end
 
   def self.new_from_db(row)
-    binding.pry
     new_pokemon = self.new
     new_pokemon.id = row[0]
     new_pokemon.name = row[1]
