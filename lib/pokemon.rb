@@ -11,11 +11,7 @@ class Pokemon
   end
 
   def self.new_from_db(row)
-    new_pokemon = self.new
-    new_pokemon.id = row[0]
-    new_pokemon.name = row[1]
-    new_pokemon.type = row[2]
-    new_pokemon
+    new_pokemon = self.new(id:row[0], name:row[1], type:row[2])
   end
 
   def self.save(name, type, db)
