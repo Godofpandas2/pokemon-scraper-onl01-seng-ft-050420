@@ -12,7 +12,10 @@ class Pokemon
 
   def self.new_from_db(row)
     binding.pry
-    new_pokemon = self.new(row[0], row[1], row[2], row[3])
+    new_pokemon = self.new
+    new_pokemon.id = row[0]
+    new_pokemon.name = row[1]
+    new_pokemon.type = row[2]
   end
 
   def self.save(name, type, db)
