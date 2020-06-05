@@ -10,6 +10,9 @@ class Pokemon
     @db = db
   end
 
+  def self.new_from_db(row)
+    new_pokemon = self.new(row[0], row[1], row[2])
+
   def self.save(name, type, db)
     sql = <<-SQL
       INSERT INTO pokemon (name, type)
@@ -25,6 +28,7 @@ class Pokemon
       SELECT * FROM pokemon
       WHERE id = ?
     SQL
-    binding.pry
+      db.execute(sql, id).map do |row|
+        self.
   end
 end
